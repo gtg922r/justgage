@@ -142,6 +142,10 @@
     // titleFontColor : string
     // color of gauge title
     titleFontColor : obj.kvLookup('titleFontColor', config, dataset,  "#999999"),
+      
+    // titleMinFontSize : int
+    // Minimum Font Size in gauge title
+    titleMinFontSize : obj.kvLookup('titleMinFontSize', config, dataset,  10),      
 
     // value : int
     // value gauge is showing
@@ -375,7 +379,7 @@
     dy = (canvasH - widgetH)/2;
 
     // title
-    titleFontSize = ((widgetH / 8) > 10) ? (widgetH / 10) : 10;
+    titleFontSize = ((widgetH / 8) > 10) ? (widgetH / 10) : obj.config.titleMinFontSize;
     titleX = dx + widgetW / 2;
     titleY = dy + widgetH / 11;
 
